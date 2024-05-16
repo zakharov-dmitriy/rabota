@@ -1,7 +1,5 @@
-package UI;
-
-import UI.pages.Authorization;
-import UI.pages.MainEmployer;
+import pages.Authorization;
+import pages.MainEmployer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

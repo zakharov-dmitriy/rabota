@@ -1,6 +1,4 @@
-package UI;
-
-import UI.pages.MainPage;
+import pages.MainPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Assertions;
@@ -103,5 +101,9 @@ public class MainPageTest extends TestBase {
                 () -> Assertions.assertTrue(driver.getCurrentUrl().contains(expectedUrl),
                         "После клика открылась неверная страница")
         );
+    }
+    @Test
+    public void testFirst() {
+        System.out.println("hello!");
     }
 }
