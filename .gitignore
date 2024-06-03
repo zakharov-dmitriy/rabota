@@ -49,3 +49,4 @@ bin/
 /.idea
 **/screens
 /.allure
+allure-results/
