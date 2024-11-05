@@ -175,11 +175,7 @@ public class MainEmployer extends Page {
     }
 
     public void sendButtonClick() {
-        try {
-            sendButton.click();
-        } catch (ElementClickInterceptedException e) {
-            jsExecutor.executeScript("arguments[0].click(true)", sendButton);
-        }
+        clickElement(sendButton);
     }
 
     //Добавление вакансии
