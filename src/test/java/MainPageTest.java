@@ -1,10 +1,7 @@
+import org.junit.jupiter.api.*;
 import pages.MainPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 
 public class MainPageTest extends TestBase {
 
@@ -17,6 +14,7 @@ public class MainPageTest extends TestBase {
         page.acceptCookiesAndRegion();
     }
 
+    //    @Disabled
     @Test
     @Owner("@d.zakharov")
     @Description("Переключение на Работодателя на главной странице")
@@ -102,6 +100,7 @@ public class MainPageTest extends TestBase {
                         "После клика открылась неверная страница")
         );
     }
+
     @Test
     public void testFirst() {
         System.out.println("hello!");

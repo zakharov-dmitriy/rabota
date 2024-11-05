@@ -17,6 +17,7 @@ public class EmployeeServicesTest extends TestBase {
         page.acceptCookiesAndRegion();
         login.loginEmployer("79199259000", "q1eQ1=-3");
         //act
+//        page.choiseRole();
         page.header.megaMenu.click();
         page.header.allServices.click();
         page.declarationBtn.click();

@@ -113,6 +113,21 @@ public class MainEmployer extends Page {
     public WebElement cancelBtnModal;
 
 
+    @FindBy(css = "[name='form-esia-complete-registration']")
+    public WebElement formRegistration;
+
+    @FindBy(xpath = "//*[@value='joinCommon']")
+    public WebElement formRadioJoin;
+
+    @FindBy(xpath = "//*[@value='OWNER']")
+    public WebElement formRoleOwner;
+
+    @FindBy(xpath = "//*[@value='ADMINISTRATOR']")
+    public WebElement formRoleAdministrator;
+
+    @FindBy(css = "[data-action='register']")
+    public WebElement formButton;
+
     public MainEmployer(WebDriver driver, WebDriverWait wait) {
         super(driver, wait, "/auth/manager");
         PageFactory.initElements(driver, this);
@@ -156,7 +171,7 @@ public class MainEmployer extends Page {
     }
 
     public void setSelectVacancy() {
-        new Select(selectVacancy).selectByValue("a121e875-6cd2-11ee-8f4c-67962f0ca730");
+        new Select(selectVacancy).selectByValue("7c398188-92c9-11ef-819c-d770ac669473");
     }
 
     public void sendButtonClick() {
@@ -229,5 +244,26 @@ public class MainEmployer extends Page {
         wait.withTimeout(Duration.ofSeconds(45)).until(ExpectedConditions.textToBePresentInElement(title,
                 "Вакансии компании"));
         return title.getText();
+    }
+
+    //метод для присоедниения к компании и выбора роли
+    public void choiseRole() {
+        if (!formRegistration.isDisplayed()) {
+            clickElement(header.megaMenu);
+        } else {
+//            header.megaMenu.click();
+            clickElement(formRadioJoin);
+            clickElement(formRoleOwner);
+            clickElement(formButton);
+        }
+    }
+
+    //универсальный метод клика по элементу
+    private void clickElement(WebElement element) {
+        try {
+            element.click();
+        } catch (ElementClickInterceptedException e) {
+            jsExecutor.executeScript("arguments[0].click(true)", element);
+        }
     }
 }

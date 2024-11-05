@@ -21,6 +21,7 @@ public class CandidateServicesTest extends TestBase {
 //        login.candidate();
         //act
         page.megaMenu.click();
+//        page.clickOnMenu();
         page.allServices.click();
         page.declarationBtn.click();
         page.radioClaim.sendKeys(Keys.SPACE);

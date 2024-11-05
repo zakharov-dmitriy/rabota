@@ -22,7 +22,7 @@ public class MainPage extends Page {
     @FindBy(xpath = "//*[@class = 'cookies']//button")
     public WebElement acceptCookie;
 
-    @FindBy(css = ".col-md-12 > .main__search > .content__title")
+    @FindBy(xpath = "//*[@class='  col-md-12   ']//*[@class ='main__search']//*[@class='content__title']")
     public WebElement titleEmployees;
 
     @FindBy(css = ".home__search-control")

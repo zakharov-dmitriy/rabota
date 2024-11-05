@@ -38,12 +38,13 @@ public class TestBase {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         var options = new ChromeOptions();
-        options.addArguments("--start-maximized", "--incognito");
-        //options.addArguments("--headless"); //без браузера
+        options.addArguments("--start-maximized", "--ignore-certificate-errors"); //"--incognito",
+        //options.setBinary("/var/lib/flatpak/exports/bin/com.google.Chrome"); //принудительно запусткает браузер установленный по другому пути
+//        options.addArguments("--headless"); //без браузера
         driver = new ChromeDriver(options);
         initialWindow = driver.getWindowHandle();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @AfterEach

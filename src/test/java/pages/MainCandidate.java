@@ -461,4 +461,9 @@ public class MainCandidate extends Page {
                 "Ваше заявление успешно отправлено!"));
         return titleSuccess.getText();
     }
+
+    public void clickOnMenu() {
+        wait.until(ExpectedConditions.visibilityOfAllElements(megaMenu));
+        megaMenu.click();
+    }
 }

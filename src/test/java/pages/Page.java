@@ -43,7 +43,7 @@ public class Page {
     }
 
 //    private String url = "https://trudvsem.ru";
-    private String url = "https://web-hotfix-test010.k8s.trudvsem.ru";
+    private String url = "https://web-hotfix-test14.k8s.trudvsem.ru";
     private String subUrl = "";
 
     protected String getPageUrl() {
