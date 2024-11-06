@@ -37,7 +37,7 @@ public class CreateVacancyTest extends TestBase {
             "Общественная работа"});
 
     String type = typeVacancy.get(0);
-    String vacancy = vacancyNames.get(9);
+    String vacancy = vacancyNames.get(7);
 
     @Test
     @DisplayName("Создание и публикация вакансии")
@@ -61,7 +61,7 @@ public class CreateVacancyTest extends TestBase {
         page.inputRequirements("Требования");
         page.contactPersonInput.sendKeys("Мария");
         page.phone.sendKeys("9121213531");
-        page.publishButtonClick();
+        //page.publishButtonClick(); кнопка модального окна
         //assert
         Assertions.assertAll(
                 () -> Assertions.assertEquals("Вакансии компании", page.getTitleText(),

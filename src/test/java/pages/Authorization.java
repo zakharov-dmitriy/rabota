@@ -1,9 +1,11 @@
 package pages;
 
+import org.aspectj.apache.bcel.ExceptionConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Authorization extends Page{
@@ -19,6 +21,9 @@ public class Authorization extends Page{
 
     @FindBy(xpath = "//*[@data-target='#laborer']")
     public WebElement laborerTab;
+
+    @FindBy(css = "#password")
+    public WebElement inputPassword;
 
     public Authorization(WebDriver driver, WebDriverWait wait) {
         super(driver, wait, "/auth/login");
@@ -42,12 +47,14 @@ public class Authorization extends Page{
 
     public void loginCandidate(String login, String password) {
         laborerEnterBtn.click();
+        wait.until(ExpectedConditions.elementToBeClickable(inputPassword));
         esia.auth(login, password);
         esia.accountSelectionAsCandidate();
     }
 
     public void loginEmployer(String login, String password) {
         laborerEnterBtn.click();
+        wait.until(ExpectedConditions.elementToBeClickable(inputPassword));
         esia.auth(login, password);
         esia.accountSelectionAsEmployer();
     }

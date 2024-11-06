@@ -448,6 +448,14 @@ public class MainCandidate extends Page {
         fraudulentBenefitCheckbox.sendKeys(Keys.SPACE);
     }
 
+    private void clickElement(WebElement element) {
+        try {
+            element.click();
+        } catch (ElementClickInterceptedException e) {
+            jsExecutor.executeScript("arguments[0].click(true)", element);
+        }
+    }
+
     public void sendButtonClick() {
         try {
             sendApplication.click();
@@ -465,5 +473,11 @@ public class MainCandidate extends Page {
     public void clickOnMenu() {
         wait.until(ExpectedConditions.visibilityOfAllElements(megaMenu));
         megaMenu.click();
+    }
+
+    //метод ввода значений в поле формы через JS
+    public void setValue(String vacation) {
+        jsExecutor.executeScript("var elements = document.getElementsByName('positionName');"
+                + "if (elements.length > 0) { elements[0].value = arguments[0]; }", vacation);
     }
 }

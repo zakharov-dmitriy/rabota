@@ -36,8 +36,4 @@ tasks.test {
         junitXml.required = true
         junitXml.outputLocation = file("${layout.buildDirectory}/allure-results")
     }
-    onlyIf {
-        // Отключаем автоматический запуск тестов
-        false
-    }
 }

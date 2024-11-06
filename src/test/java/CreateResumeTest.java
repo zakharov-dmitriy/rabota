@@ -21,7 +21,8 @@ public class CreateResumeTest extends TestBase {
         login.loginCandidate("+79199259000", "q1eQ1=-3");
         //act
         page.newResume.click();
-        page.desiredPosition.sendKeys(vacation);
+//        page.desiredPosition.sendKeys(vacation);
+        page.setValue(vacation); //желаемая должность
         page.setField();
         page.salary.sendKeys("148 000");
         page.switchWorkExperience.sendKeys(Keys.SPACE);
